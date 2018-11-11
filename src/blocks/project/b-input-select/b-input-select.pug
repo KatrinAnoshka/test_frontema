@@ -1,0 +1,14 @@
+mixin b-input-select(data)
+	-
+		if (data ===undefined) data = {};
+		var params = JSON.stringify({
+			placeholder: data.placeholder || '',
+			theme: data.theme || 'base'
+		});
+
+	+b.b-input-select(class=attributes.class).js-init
+		+e.SELECT.select.js-select(data-params=params)&attributes(attributes)
+			block
+		if data.label
+			+e.label(class=data.labelMod)
+				+e.label-text!=data.label

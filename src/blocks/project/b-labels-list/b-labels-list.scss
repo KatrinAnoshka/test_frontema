@@ -1,0 +1,19 @@
+.b-labels-list {
+	&__items {
+		margin-bottom: -4px;
+	}
+	&__item {
+		display: inline-block;
+		@include mr(1px);
+		margin-bottom: 4px;
+	}
+	&__btn {
+		display: inline-block;
+		padding: 13px 17px;
+		background-color: #8D7570;
+		color: #fff;
+		border-radius: 4px;
+		font-size: 14px;
+		font-weight: 500;
+	}
+}

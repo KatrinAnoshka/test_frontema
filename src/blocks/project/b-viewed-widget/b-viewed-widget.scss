@@ -1,0 +1,59 @@
+.b-viewed-widget {
+	&__plate {
+		background-color: #F9F9F9;
+		border-radius: 4px;
+	}
+	&__header {
+		position: relative;
+		border-bottom: 1px solid #E3E3E3;
+		padding: 30px 24px 25px;
+		padding-right: 50px;
+	}
+	&__head-icon {
+		position: absolute;
+		right: 28px;
+		top: 24px;
+		fill:  #9C3C3B;
+	}
+	&__title {
+		font-family: $Montserrat;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: (18/14);
+		letter-spacing: -0.01em;
+		color: #9C3C3B;
+	}
+	&__footer {
+		padding: 16px 20px;
+		border-top: 1px solid #E3E3E3;
+	}
+	&__all-link {
+		width: 100%;
+	}
+	&__item {
+		position: relative;
+		padding: 11px 20px;
+		border-top: 1px solid #E3E3E3;
+		transition-duration: $tr-time;
+		transition-property: background-color, box-shadow;
+		&:first-child {
+			border-top: none;
+		}
+		&:hover {
+			background-color: #fff;
+			box-shadow: 0px 2px 16px rgba(58, 52, 48, 0.12);
+			border-top-color: transparent;
+
+			.b-tiny-card__title-link {
+				color: #9C3C3B;
+			}
+		}
+	}
+	&__item-link {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}

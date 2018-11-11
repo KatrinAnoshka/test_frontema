@@ -1,0 +1,22 @@
+mixin b-aside-menu(data)
+	+b.b-aside-menu(class=attributes.class).js-init
+		+e.plate
+			+e.groups
+				each group in data.groups
+					+e.group
+						+e.group-header
+							+e.group-title!= group.header
+							+icon(group.icon).group-icon
+
+						+e.group-items
+							each item in group.items
+								+e.item
+									+e.A.link(href=item.link || "#")
+										+e.link-text!= item.text
+
+			+e.footer
+				+e.btns
+					+e.btn._more
+						+e.A.more-btn.u-btn._small._transparent._more(href="#") Показать еще
+					+e.btn
+						+e.A.all-btn.u-btn._small._transparent(href="#") Все подборки новостроек

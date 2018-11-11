@@ -1,0 +1,10 @@
+.b-small-banners {
+	&__img {
+		vertical-align: top;
+		max-width: 100%;
+		height: auto;
+	}
+	&__item {
+		@include mb(16px);
+	}
+}

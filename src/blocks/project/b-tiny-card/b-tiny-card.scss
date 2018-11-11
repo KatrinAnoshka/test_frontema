@@ -1,0 +1,29 @@
+.b-tiny-card {
+	&__plate {
+		display: flex;
+	}
+	&__image-holder {
+		flex: 0 0 48px;
+		max-width: 48px;
+		min-width: 0;
+		@include mr(12px);
+	}
+	&__category {
+		@include mb(5px);
+		font-size: 11px;
+		color: #B4AFAE;
+		font-weight: 500;
+	}
+	&__title {
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 1.25;
+	}
+	&__title-link {
+		text-decoration: none;
+		color: inherit;
+		&:hover {
+			color:  #9C3C3B;
+		}
+	}
+}

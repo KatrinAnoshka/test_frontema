@@ -1,0 +1,11 @@
+process.env.NODE_PATH = __dirname + '/src';
+require('module').Module._initPaths();
+require('./config/tasks/clean');
+require('./config/tasks/copy');
+require('./config/tasks/icons');
+require('./config/tasks/scripts');
+require('./config/tasks/server');
+require('./config/tasks/styles');
+require('./config/tasks/templates');
+require('./config/tasks/watch');
+require('./config/tasks/default');

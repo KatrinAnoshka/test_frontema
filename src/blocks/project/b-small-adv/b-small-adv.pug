@@ -1,0 +1,13 @@
+mixin b-small-adv(data)
+	+b.b-small-adv
+		+e.plate
+			+e.img-col
+				+e.IMG.img(src="/assets/images/content/adv1.svg")
+			+e.content-col
+				+e.header
+					.u-adv-label Реклама
+
+				+e.main
+					+e.text!= data.text
+
+			+e.A.link(href="#")

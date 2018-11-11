@@ -1,0 +1,13 @@
+mixin b-promo-slider()
+	+b.b-promo-slider(class=attributes.class).js-init
+		+e.slider-holder
+			+e.arrows
+				+e.arrow-left
+					+b.u-arrow._round-dark
+						+icon('angle').icon
+				+e.arrow-right
+					+b.u-arrow._round-dark._flip
+						+icon('angle').icon
+
+			+e.slides
+				block

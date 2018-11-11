@@ -1,0 +1,61 @@
+/**
+** Пример подключения шрифтов. Файлы шрифтов необходимо поместить в папку src/resources/fonts
+**/
+
+$Roboto: 'Roboto', sans-serif;
+$Montserrat: 'Montserrat', $Roboto;
+
+@font-face {
+  font-family: 'Roboto';
+	src: url('../fonts/Roboto_Regular/Roboto_Regular.eot');
+	src: url('../fonts/Roboto_Regular/Roboto_Regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Roboto_Regular/Roboto_Regular.woff') format('woff'),
+		 url('../fonts/Roboto_Regular/Roboto_Regular.ttf') format('truetype'),
+		 url('../fonts/Roboto_Regular/Roboto_Regular.svg#robotoregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+	src: url('../fonts/Roboto_Medium/Roboto_Medium.eot');
+	src: url('../fonts/Roboto_Medium/Roboto_Medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Roboto_Medium/Roboto_Medium.woff') format('woff'),
+		 url('../fonts/Roboto_Medium/Roboto_Medium.ttf') format('truetype'),
+		 url('../fonts/Roboto_Medium/Roboto_Medium.svg#robotomedium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('../fonts/Roboto_Bold/Roboto_Bold.eot');
+	src: url('../fonts/Roboto_Bold/Roboto_Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Roboto_Bold/Roboto_Bold.woff') format('woff'),
+	url('../fonts/Roboto_Bold/Roboto_Bold.ttf') format('truetype'),
+	url('../fonts/Roboto_Bold/Roboto_Bold.svg#robotobold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+	src: url('../fonts/Montserrat_Bold/Montserrat_Bold.eot');
+	src: url('../fonts/Montserrat_Bold/Montserrat_Bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/Montserrat_Bold/Montserrat_Bold.woff') format('woff'),
+		 url('../fonts/Montserrat_Bold/Montserrat_Bold.ttf') format('truetype'),
+		 url('../fonts/Montserrat_Bold/Montserrat_Bold.svg#montserratbold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fontello';
+	src: url('../fonts/Fontello/fontello.eot');
+	src: url('../fonts/Fontello/fontello.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/Fontello/fontello.woff') format('woff'),
+	url('../fonts/Fontello/fontello.ttf') format('truetype'),
+	url('../fonts/Fontello/fontello.svg#montserratbold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}

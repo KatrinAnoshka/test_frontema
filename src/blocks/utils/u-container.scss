@@ -1,0 +1,13 @@
+.u-container {
+	max-width: 1286px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include adaptive-desktop-sm() {
+		max-width: 1160px;
+	}
+
+	@include adaptive-tablet {
+		max-width: 936px;
+	}
+}

@@ -1,0 +1,46 @@
+include /blocks/project/b-article-item/b-article-item
+
+mixin b-article-plates()
+	+b.b-article-plates(class=attributes.class)
+		+e.header
+			+e.title Контрольная покупка
+			+e.header-ui
+				+e.A.all-link.u-btn._gray._small(href="#") Все статьи
+
+		+e.main
+			+e.articles
+				+e.article-item._big
+					+b-article-item({
+						link: '#',
+						fullImage: '/assets/images/content/dom-content.jpg',
+						img: '/assets/images/content/dom-content1.jpg',
+						header: { category: 'Контрольная закупка', date: '11 октября' },
+						title: 'ЖК «ЦДС «Елизаровский»: для приверженцев Невского района',
+						previewText: 'Отдельные дома, жилые комплексы и целые микрорайоны...',
+					})._big._adapt_big
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/dom-content1.jpg',
+						header: {category: 'Контрольная закупка', date: '11 октября'},
+						title: 'ЖК «Измайловский, 11»: комфорт по цене бизнес',
+					})._adapt_default
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/dom-content2.jpg',
+						header: {category: 'Контрольная закупка', date: '11 октября'},
+						title: 'ЖК Terra: новое лицо «РосСтройИнвеста»',
+					})._adapt_default
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/dom-content2.jpg',
+						header: {category: 'Контрольная закупка', date: '11 октября'},
+						title: 'Кладовые со скидкой 20% в ЖК «Гринада»',
+					})._adapt_default
+
+		+e.footer
+			+e.btns
+				+e.btn
+					+e.A.all-link.u-btn._gray._small(href="#") Все статьи

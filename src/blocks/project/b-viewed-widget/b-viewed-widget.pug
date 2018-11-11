@@ -1,0 +1,38 @@
+include /blocks/project/b-tiny-card/b-tiny-card
+
+mixin b-viewed-widget(data)
+	+b.b-viewed-widget
+		+e.plate
+			+e.header
+				+e.title!= data.title
+				+icon('eye').head-icon
+			+e.main
+				+e.items
+					+e.item
+						+b-tiny-card({
+							link: '#',
+							img: '/assets/images/content/tiny1.jpg',
+							category: 'Новая Москва',
+							title: 'ЖК Новые Ватутинки, <br/>мкрн. Центральный'
+						})
+						+e.A.item-link(href="#")
+					+e.item
+						+b-tiny-card({
+							link: '#',
+							img: '/assets/images/content/tiny2.jpg',
+							category: 'Новая Москва',
+							title: 'ЖК Redside'
+						})
+						+e.A.item-link(href="#")
+					+e.item
+						+b-tiny-card({
+							link: '#',
+							img: '/assets/images/content/tiny3.jpg',
+							category: 'Новая Москва',
+							title: 'ЖК Redside'
+						})
+						+e.A.item-link(href="#")
+			+e.footer
+				+e.btns
+					+e.btn
+						+e.all-link.u-btn._transparent._small(href="#") Показать все #[span.u-btn__counter 12]

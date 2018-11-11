@@ -1,0 +1,21 @@
+mixin b-adv-plate(data)
+	+b.b-adv-plate(class=attributes.class)
+		+e.plate
+			if data.img
+				+e.img-holder
+					+e.IMG.img(src=data.img)
+			+e.content
+				if data.title
+					+e.title!= data.title
+				if data.text
+					+e.text!= data.text
+				+e.labels
+					+e.label.u-adv-label Реклама
+
+			+e.A.link(href="#")
+
+			if data.hoverContent
+				+e.hover-content
+					+e.hover-title
+						+e.A.hover-link(href="#")!= data.hoverContent.title
+					+e.hover-text!= data.hoverContent.text

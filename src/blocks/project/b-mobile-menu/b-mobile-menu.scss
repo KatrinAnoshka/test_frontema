@@ -1,0 +1,48 @@
+.b-mobile-menu {
+	&__item {
+		@include mb(15px);
+	}
+	&__link {
+		font-size: 14px;
+		font-weight: 500;
+	}
+	&__link-wrap {
+		@include mb(15px);
+	}
+	&__second-item {
+		@include mb(15px);
+	}
+	&__second-holder {
+		padding-bottom: 10px;
+	}
+	&__second-link {
+		font-size: 20px;
+		font-weight: 500;
+	}
+	&__counter {
+		display: inline-block;
+		font-size: 10px;
+		font-weight: 700;
+		vertical-align: middle;
+		padding: 3px 8px;
+		border-radius: 30px;
+		background-color: rgba(180, 175, 174, .2);
+		color: #9C3C3B;
+		@include ml(8px);
+	}
+	&__mobile-adv {
+		display: none;
+		@include mt(25px);
+		padding-bottom: 20px;
+	}
+}
+
+.b-mobile-menu_adapt_default {
+	@include adaptive-mobile() {
+		.b-mobile-menu {
+			&__mobile-adv {
+				display: block;
+			}
+		}
+	}
+}

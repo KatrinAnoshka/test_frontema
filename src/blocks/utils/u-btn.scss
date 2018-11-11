@@ -1,0 +1,115 @@
+.u-btn {
+	display: inline-block;
+	text-align: center;
+	width: 208px;
+	max-width: 100%;
+	font-size: 14px;
+	line-height: (16/14);
+	padding: 16px 20px;
+	border: none;
+
+	&_small {
+		width: auto;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: (15/12);
+		padding: 9px 16px;
+	}
+
+	&_red {
+		border-radius: 30px;
+		font-weight: bold;
+		background-color: #9C3C3B;
+		text-decoration: none;
+		color: #fff;
+		transition: $tr-time background-color;
+
+		@include hover() {
+			background-color: #B64745;
+		}
+	}
+
+	&_black {
+		border-radius: 30px;
+		font-weight: bold;
+		background-color: #3A3430;
+		text-decoration: none;
+		color: #FFE296;
+		transition: $tr-time background-color;
+
+		@include hover() {
+			background-color: #9C3C3B;
+		}
+	}
+
+	&_gray {
+		border-radius: 30px;
+		font-weight: bold;
+		background-color: #F9F9F9;
+		text-decoration: none;
+		color: #3A3430;
+		transition: $tr-time background-color;
+
+		@include hover() {
+			color: #9C3C3B;
+			background: #fff;
+			box-shadow: 0px 2px 12px rgba(58, 52, 48, 0.12);
+		}
+
+		.u-btn__counter {
+			color: #9C3C3B;
+		}
+	}
+
+	&_white {
+		border-radius: 30px;
+		border: 1px solid #D4D4D4;
+		font-weight: bold;
+		background-color: #FFF;
+		text-decoration: none;
+		color: #3A3430;
+		transition: $tr-time background-color, $tr-time border-color;
+
+		@include hover() {
+			color: #9C3C3B;
+			background: #FEFEFE;
+			border-color: transparent;
+			box-shadow: 0px 2px 12px rgba(58, 52, 48, 0.12);
+		}
+	}
+
+	&_transparent {
+		padding-top: 8px;
+		padding-bottom: 7px;
+		border-radius: 30px;
+		border: 1px solid #D4D4D4;
+		font-weight: bold;
+		background: none;
+		text-decoration: none;
+		color: #3A3430;
+		transition: $tr-time background-color, $tr-time border-color;
+
+		@include hover() {
+			color: #9C3C3B;
+			background: #FEFEFE;
+			border-color: transparent;
+			box-shadow: 0px 2px 12px rgba(58, 52, 48, 0.12);
+		}
+
+		.u-btn__counter {
+			color: #9C3C3B;
+			margin-left: 5px;
+		}
+	}
+
+	&_more {
+		position: relative;
+		&:after {
+			@include ft-icon($ft-ellipsis);
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			margin-top: -6px;
+		}
+	}
+}

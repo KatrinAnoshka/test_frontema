@@ -1,0 +1,41 @@
+.b-adv-list {
+	&__item {
+		@include mb(15px);
+	}
+	&__title {
+		font-family: $Montserrat;
+		font-weight: bold;
+		@include mb(18px);
+	}
+}
+
+@mixin state_mobile-slider() {
+	.b-adv-list {
+		&__items {
+			margin: -8px;
+			margin-right: -16px;
+			.slick-slide {
+				width: 204px;
+			}
+		}
+		&__item {
+			padding: 8px;
+		}
+	}
+}
+
+.b-adv-list_adapt_last-aside-list {
+	@include adaptive-desktop-sm {
+		.b-adv-list {
+			&__item {
+				display: none;
+			}
+			&__item:nth-child(-n+3) {
+				display: block;
+			}
+		}
+	}
+	@include adaptive-mobile {
+		@include state_mobile-slider;
+	}
+}

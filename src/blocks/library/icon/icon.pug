@@ -1,0 +1,7 @@
+mixin icon(iconName)
+	if !attributes.class
+		svg(class='u-icon u-icon_' + iconName)&attributes(attributes)
+			use(xlink:href='/assets/images/icons.svg#icon_' + iconName)
+	else
+		+e('svg')(class=attributes.class + " u-icon_" + iconName)
+			use(xlink:href='/assets/images/icons.svg#icon_' + iconName)

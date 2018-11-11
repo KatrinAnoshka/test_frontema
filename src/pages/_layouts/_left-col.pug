@@ -1,0 +1,13 @@
+extends /pages/_layouts/_default
+
+include /blocks/project/b-labels-list/b-labels-list
+
+block content
+	+e.layout-cols
+		+e.left-col
+			block left-col
+
+		+e.main-col
+			block mobile-header
+
+			block main-col

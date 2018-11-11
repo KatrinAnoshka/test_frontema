@@ -1,0 +1,39 @@
+.b-input-text {
+	&__input-wrap {
+		position: relative;
+	}
+
+	&__search-icon {
+		position: absolute;
+		top: 50%;
+		left: 16px;
+		margin-top: -8px;
+	}
+	&__input {
+		width: 100%;
+		padding: 17px 20px;
+		border-radius: 4px;
+		border: none;
+		background-color: #F9F9F9;
+		font-size: 12px;
+		font-weight: 500;
+		font-family: $Roboto;
+
+		@include placeholder() {
+			font-family: $Roboto;
+			font-size: 12px;
+			font-weight: 500;
+			color: #3A3430;
+		}
+
+		&:focus {
+			@include placeholder() {
+				opacity: 0;
+			}
+		}
+
+		&_search {
+			padding-left: 40px;
+		}
+	}
+}

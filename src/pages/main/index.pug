@@ -1,0 +1,493 @@
+extends /pages/_layouts/_left-col
+
+include /blocks/project/b-promo-slider/b-promo-slider
+include /blocks/project/b-slide/b-slide
+include /blocks/project/b-aside-menu/b-aside-menu
+include /blocks/project/b-article-plates/b-article-plates
+include /blocks/project/b-article-plates/b-article-plates_interier
+include /blocks/project/b-article-plates/b-article-plates_offers
+include /blocks/project/b-plates-slider/b-plates-slider
+include /blocks/project/b-adv-plate/b-adv-plate
+include /blocks/project/b-article-list/b-article-list
+include /blocks/project/b-viewed-widget/b-viewed-widget
+include /blocks/project/b-adv-list/b-adv-list
+include /blocks/project/b-small-banners/b-small-banners
+
+//- include /blocks/project/b-vertical-widget/b-vertical-widget
+//- include /blocks/project/b-search-widget/b-search-widget
+//- include /blocks/project/b-article-shelf/b-article-shelf
+
+block global_vars
+	- $bodyMods = ['_main'];
+	-
+		var $asideMenuLinks = [
+			{ header: 'Людей интересует', icon: 'heart', items: [
+				{ link: '#', text: 'Рядом с метро' },
+				{ link: '#', text: 'Бюджетные 1-а ком. в Москве' },
+				{ link: '#', text: 'Бюджетные 2-x ком. в Москве' },
+				{ link: '#', text: 'Самые дешевые новостройки Москвы' },
+				{ link: '#', text: 'Самые дешевые новостройки Подмосковья' },
+				{ link: '#', text: 'Бюджетные 2-х ком. в Москве' },
+			] },
+			{ header: 'По цене', icon: 'rouble', items: [
+				{ link: '#', text: 'До 5 млн. в Москве' },
+				{ link: '#', text: 'До 3 млн. в Москве' },
+				{ link: '#', text: 'До 3 млн. в Новой Москве' },
+				{ link: '#', text: 'До 2 млн. в Новой Москве' },
+				{ link: '#', text: 'До 3 млн. в Подмосковье' },
+				{ link: '#', text: 'До 2 млн. в МО' },
+				{ link: '#', text: 'До 1,5 млн. в МО' },
+			] },
+			{ header: 'По году сдачи', icon: 'small-calendar', items: [
+				{ link: '#', text: 'На стадии котлована' },
+				{ link: '#', text: 'В этом (2018) году в Москве' },
+				{ link: '#', text: 'В 2019 в Москве' },
+				{ link: '#', text: 'В 2020 в Москве' },
+			] },
+			{ header: 'По наличию отделки', icon: 'paint-roller', items: [
+				{ link: '#', text: 'С отделкой в Москве' },
+				{ link: '#', text: 'С отделкой в МО' },
+				{ link: '#', text: 'С отделкой в Новой Москве' },
+				{ link: '#', text: 'Без отделки Москве' },
+				{ link: '#', text: 'Без отделки МО' },
+				{ link: '#', text: 'Без отделки в Новой Москве' },
+			] },
+			{ header: 'На карте', icon: 'placemark', items: [
+				{ link: '#', text: 'Московский регион' },
+				{ link: '#', text: 'Москва' },
+				{ link: '#', text: 'Московская область' },
+				{ link: '#', text: 'Новая Москва' },
+				{ link: '#', text: 'Санкт-Петербург' },
+			] }
+		];
+
+block mobile-header
+	+e.mobile-item._search-widget
+		.js-replacer(data-id="search-widget" data-points='{"breakpoints": ["mobile"]}')
+
+	+e.mobile-header
+		+e.mobile-title Новостройки
+		+e.mobile-menu
+			+b-labels-list({
+				items: [
+					{text: 'Москва'},
+					{text: 'Московская область'},
+					{text: 'Новая Москва'},
+					{text: 'Санкт-Петербург'},
+				]
+			})
+
+block left-col
+	//- Здесь размесить реализацию поискового виджета
+	//+e.aside-item._search-widget
+		//.js-replacer(data-id="search-widget" data-points='{"breakpoints":["tablet","desktop","desktop_sm"]}' data-active)
+			// +b-search-widget._adapt_aside
+
+	+e.aside-item._aside-menu
+		.js-replacer(data-id="aside-menu" data-points='{"breakpoints":["tablet","desktop","desktop_sm"]}' data-active)
+			+b-aside-menu({ groups: $asideMenuLinks })._adapt_aside
+
+	+e.aside-item
+		+b-viewed-widget({
+			title: 'Вы просматривали'
+		})
+
+	//- Здесь размесить реализацию виджета c вертикальным слайдером
+	//+e.aside-item
+		//+b-vertical-widget()
+
+	+e.aside-item._banner
+		+e.A.banner-link(href="")
+			+e.IMG.banner-image(src="/assets/images/content/banner.jpg")
+
+	+e.aside-item._short-adv
+		+b-adv-list({
+			items: [
+				{data: {img: '/assets/images/content/adv1.jpg', title: 'Счастье на севере',
+						hoverContent: {
+							title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+							text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+						}
+					}, mod: ['_small _adapt_aside']
+				},
+				{data: {img: '/assets/images/content/adv3.jpg', title: 'ЖК Ariosto!',
+						hoverContent: {
+							title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+							text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+						}
+					}, mod: ['_small _adapt_aside']
+				},
+				{data: {img: '/assets/images/content/adv2.jpg', title: 'ЖК FRESH!',
+						hoverContent: {
+							title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+							text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+						}
+					}, mod: ['_small _adapt_aside'],
+				}
+			]
+		})
+
+
+	+e.aside-item._banner
+		+b-small-banners
+
+	+e.aside-item._full-adv
+		-
+			var items = [
+				{
+					data: {
+						img: '/assets/images/content/adv3.jpg',
+						title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					},
+					mod: ['_small _adapt_aside']
+				},
+				{
+					data: {
+						img: '/assets/images/content/adv4.jpg',
+						title: 'ЖК премиум-класса «КУТУЗОВСКИЙ, 12»',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					},
+					mod: ['_small _adapt_aside']
+				}
+			];
+		+b-adv-list({
+			title: 'Реклама от застройщиков',
+			items: items.concat(items).concat(items).concat(items).concat(items).slice(0, 9)
+		})._adapt_last-aside-list._mobile-slider
+
+block main-col
+	+e.main-item._promo-slider
+		+b-promo-slider._adapt_default
+			+e.slide
+				+b-slide_default._adapt_default
+			+e.slide
+				+b-slide_default._adapt_default
+			+e.slide
+				+b-slide_default._adapt_default
+
+	+e.mobile-item._aside-menu
+		.js-replacer(data-id="aside-menu" data-points='{"breakpoints": ["mobile"]}')
+
+	+e.main-item._top-articles
+		+b-article-plates._adapt_articles-default
+	+e.main-item._top-adv-slider
+		+b-plates-slider({
+			title: 'Реклама от застройщиков'
+		})._adapt_default
+			each val in [1,2]
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv1.jpg',
+						title: 'Счастье на севере',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv2.jpg',
+						title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv3.jpg',
+						title: 'ЖК Ariosto!',
+						text: 'Более 300 уникальных планировок с террасами, саунами, кабинетами и потолками 3,6 м.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv4.jpg',
+						title: 'ЖК премиум-класса «КУТУЗОВСКИЙ, 12»',
+						text: 'Новый клубный дом на Кутузовском проспекте. Строгие фасады. Роскошные виды. Повышение цены.'
+					})
+
+
+
+
+
+	+e.main-item._offers
+		+b-article-plates_offers._adapt_offers
+	+e.main-item._top-lists
+		+e.cols
+			+e.half-col
+				+b-article-list({
+					title: 'Правовая информация',
+					items: [
+						{
+							data: {
+								link: '#',
+								header: {category: 'Правовая информация', date: '11 октября'},
+								title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки'
+							}
+						},
+						{
+							data: {
+								link: '#',
+								header: {category: 'Правовая информация', date: '11 октября'},
+								title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+							}
+						},
+						{
+							data: {
+								link: '#',
+								header: {category: 'Правовая информация', date: '11 октября'},
+								title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+							}
+						},
+					],
+					allLink: '#',
+					allText: 'Все статьи',
+				})._adapt_default
+			+e.half-col
+				+b-article-list({
+					title: 'Новости от застройщика',
+					items: [
+						{
+							data: {
+								link: '#',
+								header: {category: 'Новости', date: '11 октября'},
+								title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки'
+							}
+						},
+						{
+							data: {
+								link: '#',
+								header: {category: 'Новости', date: '11 октября'},
+								title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+							}
+						},
+						{
+							data: {
+								link: '#',
+								header: {category: 'Новости', date: '11 октября'},
+								title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+							}
+						},
+					],
+					allLink: '#',
+					allText: 'Все новости',
+				})._adapt_default
+	+e.main-item._second-adv-slider
+		+b-plates-slider({
+			title: 'Реклама от застройщиков'
+		})._adapt_default
+			each val in [1,2]
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv1.jpg',
+						title: 'Счастье на севере',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv2.jpg',
+						title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv3.jpg',
+						title: 'ЖК Ariosto!',
+						text: 'Более 300 уникальных планировок с террасами, саунами, кабинетами и потолками 3,6 м.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv4.jpg',
+						title: 'ЖК премиум-класса «КУТУЗОВСКИЙ, 12»',
+						text: 'Новый клубный дом на Кутузовском проспекте. Строгие фасады. Роскошные виды. Повышение цены.'
+					})
+
+
+
+	+e.main-item._secondary-articles
+		+b-article-plates_interier._adapt_articles-default
+	+e.main-item._opinions-lists
+		+e.cols
+			+e.half-col
+				+b-article-list({
+					title: 'Мнение экспертов',
+					items: [
+						{
+							mod: ['_opinion', '_adapt_opinion'],
+							data: {
+								link: '#',
+								img: '/assets/images/content/ava1.png',
+								header: {category: 'Мнение экспертов', date: '11 октября'},
+								title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки',
+							}
+						},
+						{
+							mod: ['_opinion', '_adapt_opinion'],
+							data: {
+								link: '#',
+								img: '/assets/images/content/ava2.png',
+								header: {category: 'Мнение экспертов', date: '11 октября'},
+								title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+							}
+						},
+						{
+							mod: ['_opinion', '_adapt_opinion'],
+							data: {
+								link: '#',
+								img: '/assets/images/content/ava3.png',
+								header: {category: 'Мнение экспертов', date: '11 октября'},
+								title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+							}
+						},
+					],
+					allLink: '#',
+					allText: 'Все статьи',
+				})._adapt_default
+			+e.half-col
+				+b-article-list({
+					title: 'Новости рынка',
+					items: [
+						{
+							mod: ['_opinion', '_adapt_opinion'],
+							data: {
+								link: '#',
+								header: {category: 'Новости', date: '11 октября'},
+								title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки'
+							}
+						},
+						{
+							mod: ['_opinion', '_adapt_opinion'],
+							data: {
+								link: '#',
+								header: {category: 'Новости', date: '11 октября'},
+								title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+							}
+						},
+						{
+							mod: ['_opinion', '_adapt_opinion'],
+							data: {
+								link: '#',
+								header: {category: 'Новости', date: '11 октября'},
+								title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+							}
+						},
+					],
+					allLink: '#',
+					allText: 'Все новости',
+				})._adapt_default
+
+
+
+	+e.main-item._third-adv-slider
+		+b-plates-slider({
+			title: 'Реклама от застройщиков'
+		})._adapt_default
+			each val in [1,2]
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv1.jpg',
+						title: 'Счастье на севере',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv2.jpg',
+						title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv3.jpg',
+						title: 'ЖК Ariosto!',
+						text: 'Более 300 уникальных планировок с террасами, саунами, кабинетами и потолками 3,6 м.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv4.jpg',
+						title: 'ЖК премиум-класса «КУТУЗОВСКИЙ, 12»',
+						text: 'Новый клубный дом на Кутузовском проспекте. Строгие фасады. Роскошные виды. Повышение цены.'
+					})
+
+	//- Тут разместить реализацию блока с интервью
+	//+e.main-item._interview
+	//	+b-article-shelf
+
+	+e.main-item._events-lists
+		+e.cols
+			+e.half-col
+				+b-article-list({
+					title: 'Мероприятия рынка',
+					items: [
+						{ data: {
+							link: '#',
+							header: {category: 'Мероприятия рынка', date: '11 октября'},
+							title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки'
+						}},
+						{ data: {
+							link: '#',
+							header: {category: 'Мероприятия рынка', date: '11 октября'},
+							title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+						}},
+						{ data: {
+							link: '#',
+							header: {category: 'Мероприятия рынка', date: '11 октября'},
+							title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+						}},
+					],
+					allLink: '#',
+					allText: 'Все новости',
+				})._adapt_default
+			+e.half-col
+				+b-article-list({
+					title: 'Статьи. Аналитика',
+					items: [
+						{
+							data: {
+								link: '#',
+								header: {category: 'Статьи. Аналитика', date: '11 октября'},
+								title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки'
+							}
+						},
+						{
+							data: {
+								link: '#',
+								header: {category: 'Статьи. Аналитика', date: '11 октября'},
+								title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+							}
+						},
+						{
+							data: {
+								link: '#',
+								header: {category: 'Статьи. Аналитика', date: '11 октября'},
+								title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+							}
+						},
+					],
+					allLink: '#',
+					allText: 'Все статьи',
+				})._adapt_default
+
+	+e.main-item._third-adv-slider
+		+b-plates-slider({
+			title: 'Реклама от застройщиков'
+		})._adapt_default
+			each val in [1,2]
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv1.jpg',
+						title: 'Счастье на севере',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv2.jpg',
+						title: 'ЖК FRESH. Квартиры от ДОНСТРОЙ у метро!',
+						text: 'Уровень бизнес-класса по цене комфорт-класса! Потолки до 3,5, окна до 3,1 м. Рассрочка 0% до 2 лет.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv3.jpg',
+						title: 'ЖК Ariosto!',
+						text: 'Более 300 уникальных планировок с террасами, саунами, кабинетами и потолками 3,6 м.'
+					})
+				+e.slide
+					+b-adv-plate({
+						img: '/assets/images/content/adv4.jpg',
+						title: 'ЖК премиум-класса «КУТУЗОВСКИЙ, 12»',
+						text: 'Новый клубный дом на Кутузовском проспекте. Строгие фасады. Роскошные виды. Повышение цены.'
+					})

@@ -1,0 +1,41 @@
+.b-small-adv {
+	position: relative;
+	&__plate {
+		display: table;
+		border: 1px dashed #D4D4D4;
+		border-radius: 2px;
+	}
+	&__img-col {
+		display: table-cell;
+		vertical-align: top;
+		padding-left: 16px;
+		padding-top: 12px;
+		padding-bottom: 10px;
+	}
+	&__content-col {
+		display: table-cell;
+		vertical-align: top;
+		padding-left: 16px;
+		padding-top: 11px;
+		padding-bottom: 12px;
+		padding-right: 29px;
+	}
+	&__header {
+		@include mb(5px);
+	}
+	&__text {
+		font-size: 12px;
+		font-weight: 500;
+		color: #3A3430;
+	}
+	&__img {
+		vertical-align: top;
+	}
+	&__link {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}

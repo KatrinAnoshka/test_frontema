@@ -1,0 +1,6 @@
+mixin b-labels-list(data)
+	+b.b-labels-list(class=attributes.class)
+		+e.items
+			each item in data.items
+				+e.item
+					+e.A.btn(href="#")!= item.text

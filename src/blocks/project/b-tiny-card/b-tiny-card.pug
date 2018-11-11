@@ -1,0 +1,10 @@
+mixin b-tiny-card(data)
+	+b.b-tiny-card
+		+e.plate
+			if data.img
+				+e.image-holder
+					+e.IMG.img(src=data.img)
+			+e.content-holder
+				+e.category!= data.category
+				+e.title
+					+e.A.title-link(href="#")!= data.title

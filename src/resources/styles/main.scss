@@ -1,0 +1,14 @@
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../../node_modules/select2/src/scss/core.scss';
+
+@import './helpers/_variables.scss';
+@import './helpers/_mixins.scss';
+@import './helpers/_fonts.scss';
+@import './helpers/_reset.scss';
+@import './helpers/_base.scss';
+
+@import '../../blocks/library/**/*.scss';
+@import '../../blocks/utils/**/*.scss';
+@import '../../blocks/project/**/*.scss';
+
+@import '../../pages/**/styles.scss';

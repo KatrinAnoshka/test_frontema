@@ -1,0 +1,23 @@
+mixin menu-tree(parent, levelIndex)
+	- var levels = ['first', 'second', 'third', 'fourth', 'fifth'];
+	- var index = levelIndex || 0;
+	- var level = levels[index];
+
+	if (parent && 	parent.list)
+		+e(class=level + '-holder')
+			+e.UL(class=level + '-level')
+				each child in parent.list
+					- var link = child.link || '#';
+					- var label = child.label;
+					- var itemMod = child.itemMod ? ' ' + child.itemMod : '';
+					- var linkWrapMod = child.linkWrapMod ? ' ' + child.linkWrapMod : '';
+					- var linkMod = child.linkMod ? ' ' + child.linkMod : '';
+					- var linkTextMod = child.linkTextMod ? ' ' + child.linkTextMod : '';
+
+					+e.LI(class=level + '-item' + itemMod)
+						+e(class=level + '-link-wrap' + linkWrapMod)
+							+e.A(href=child.link || '#' class=level + '-link' + linkMod)
+								span(class=level + '-link-text' + linkTextMod)!= child.label
+
+						if (child.list)
+							+menu-tree(child, index + 1)

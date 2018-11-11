@@ -1,0 +1,51 @@
+include /blocks/project/b-article-item/b-article-item
+
+mixin b-article-plates_offers()
+	+b.b-article-plates._offers(class=attributes.class)
+		+e.header
+			+e.title Новостройки Москвы у метро
+			+e.header-ui
+				+e.A.all-link.u-btn._gray._small(href="#") #[span Все новостройки] #[span.u-btn__counter 94]
+
+		+e.main
+			+e.articles._lined
+				+e.article-item._big
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/interior-2.jpg',
+						fullImage: '/assets/images/content/interior-1.jpg',
+						title: 'Апарт-Комплекс Комплекс Апартаментов «NORD»',
+						tags: [
+							{text: 'Студия от 1,5 млн', link: '#'},
+							{text: '1-к от 2,5', link: '#'},
+							{text: '2-к от 4,5', link: '#'},
+							{text: '3-к от 6,5', link: '#'}
+						],
+						additional: 'м. Алтуфьево',
+						labels: { isRecommend: true }
+					})._big._adapt_big-offer
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/interior-2.jpg',
+						title: 'Апарт-Комплекс Комплекс Апартаментов «NORD»',
+						tags: [
+							{text: 'Квартиры от 1,5 млн', link: '#'},
+						],
+						additional: 'м. Алтуфьево'
+					})._adapt_offer
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/interior-3.jpg',
+						title: 'Апарт-Комплекс Комплекс Апартаментов «NORD»',
+						tags: [
+							{text: 'Квартиры от 1,5 млн', link: '#'},
+						],
+						additional: 'м. Алтуфьево'
+					})._adapt_offer
+
+		+e.footer
+			+e.btns
+				+e.btn
+					+e.A.all-link.u-btn._gray._small(href="#") #[span Все новостройки] #[span.u-btn__counter 94]

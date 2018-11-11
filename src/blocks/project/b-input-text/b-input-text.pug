@@ -1,0 +1,10 @@
+mixin b-input-text(data)
+	+b.b-input-text(class=attributes.class)
+		+e.input-wrap
+			+e.INPUT.input(type="text" value=data.value placeholder=data.placeholder)
+
+mixin b-input-text_search(data)
+	+b.b-input-text(class=attributes.class)
+		+e.LABEL.input-wrap
+			+icon('search').search-icon
+			+e.INPUT.input._search(type="text" value=data.value placeholder=data.placeholder)

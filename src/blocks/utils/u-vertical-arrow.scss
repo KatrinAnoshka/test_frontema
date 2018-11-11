@@ -1,0 +1,23 @@
+.u-vertical-arrow {
+	display: block;
+	background-color: #fff;
+	height: 32px;
+	padding: 8px;
+	border-radius: 30px;
+	text-align: center;
+	transition: $tr-time background-color, $tr-time box-shadow, $tr-time fill;
+	&__icon {
+		transform: rotate(90deg);
+	}
+	@include hover() {
+		fill: #9C3C3B;
+		background-color: #fff;
+		box-shadow: 0px 2px 12px rgba(58, 52, 48, 0.12);
+	}
+
+	&_flip {
+		.u-vertical-arrow__icon {
+			transform: rotate(-90deg);
+		}
+	}
+}

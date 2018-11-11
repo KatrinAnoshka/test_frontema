@@ -1,0 +1,125 @@
+.b-aside-menu {
+	&__plate {
+		padding: 30px 20px 20px;
+		background: #F9F9F9;;
+	}
+	&__group-title {
+		font-family: $Montserrat;
+		font-weight: bold;
+		font-size: 14px;
+		letter-spacing: -0.01em;
+		color: #9C3C3B;
+	}
+	&__group-header {
+		position: relative;
+		padding-right: 40px;
+		@include mb(20px);
+		padding-left: 8px;
+	}
+	&__group-icon {
+		position: absolute;
+		right: 8px;
+		top: -6px;
+	}
+	&__group {
+		@include mb(40px);
+	}
+	&__link {
+		display: block;
+		padding: 9px 16px;
+		font-size: 12px;
+		color: #3A3430;
+		text-decoration: none;
+		background-color: #fff;
+		border-radius: 30px;
+		transition-duration: $tr-time;
+		transition-property: color, background-color, box-shadow;
+		@include hover() {
+			color: #9C3C3B;
+			background-color: #FEFEFE;
+			box-shadow: 0px 2px 12px rgba(58, 52, 48, 0.12);
+		}
+	}
+	&__item {
+		@include mb(6px);
+	}
+	&__footer {
+		@include mt(34px)
+	}
+	&__btn {
+		@include mb(12px);
+		&_more {
+			display: none;
+		}
+	}
+	&__all-btn {
+		width: 100%;
+		padding-top: 7px;
+		padding-bottom: 8px;
+	}
+	&__more-btn {
+		display: block;
+	}
+}
+
+@mixin state_condensed() {
+	.b-aside-menu {
+		&__plate {
+			padding: 29px 16px 16px;
+		}
+	}
+}
+
+@mixin state_one-group() {
+	.b-aside-menu {
+		&__group {
+			display: none;
+			&:first-child {
+				display: block;
+				margin-bottom: 0;
+			}
+		}
+		&__btn {
+			&_more {
+				display: block;
+			}
+		}
+		&__footer {
+			@include mt(27px);
+		}
+	}
+	&.b-aside-menu_view-all {
+		.b-aside-menu__group {
+			display: block;
+			&:first-child {
+				@include mb(40px);
+			}
+		}
+		.b-aside-menu__btn_more {
+			display: none;
+		}
+	}
+}
+
+.b-aside-menu_adapt_aside {
+	@include adaptive-desktop-sm {
+		@include state_condensed;
+	}
+	@include adaptive-tablet {
+		@include state_condensed;
+		.b-aside-menu {
+			&__group {
+				@include mb(41px);
+			}
+		}
+	}
+	@include adaptive-mobile {
+		@include state_condensed;
+		@include state_one-group;
+		.b-aside-menu {
+			&__plate {
+				padding-top: 29px;
+			}
+		}
+	}
+}

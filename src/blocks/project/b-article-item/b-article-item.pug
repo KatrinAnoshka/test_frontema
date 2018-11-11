@@ -1,0 +1,52 @@
+mixin b-article-item(data)
+	+b.b-article-item(class=attributes.class)
+		if data.fullImage
+			+e.full-image-holder
+				+e.A.img-link(href=data.link)
+					+e.IMG.full-image(src=data.fullImage)
+
+				if data.labels
+					+e.labels
+						if data.labels.isRecommend
+							+e.label
+								+b.u-recommend-label
+									+icon('star-full').icon
+									+e.text Рекомендуем
+
+		+e.main-holder
+			if data.img
+				+e.image-holder(class=data.imgHolderMod)
+					+e.A.img-link(href=data.link)
+						+e.IMG.img(src=data.img)
+
+					if data.labels
+						+e.labels
+							if data.labels.isRecommend
+								+e.label
+									+b.u-recommend-label
+										+icon('star-full').icon
+										+e.text Рекомендуем
+
+			+e.content-holder
+				if data.header
+					+e.header
+						if data.header.category
+							+e.category!= data.header.category
+						if data.header.date
+							+e.date!= data.header.date
+
+				if data.title
+					+e.title(class=data.titleMods)
+						+e.A.title-link(href="#")!= data.title
+
+				if data.tags
+					+e.tag-list
+						each tag in data.tags
+							+e.tag-wrap
+								+e.A.tag(href=tag.link)!= tag.text
+
+				if data.additional
+					+e.additional-data!= data.additional
+
+				if data.previewText
+					+e.preview-text!= data.previewText

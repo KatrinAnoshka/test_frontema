@@ -1,0 +1,51 @@
+.b-article-list {
+	&__plate {
+		padding: 28px 24px;
+		background: #F9F9F9;
+		border-radius: 4px;
+	}
+	&__title {
+		font-family: $Montserrat;
+		font-size: 20px;
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+	}
+	&__header {
+		@include mb(38px);
+	}
+	&__item {
+		padding-top: 16px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid  #E5E5E5;
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+	&__footer {
+		@include mt(40px)
+	}
+}
+
+@mixin state_mobile {
+	.b-article-list {
+		&__plate {
+			padding: 25px 15px;
+		}
+		&__header {
+			@include mb(29px);
+		}
+		&__footer {
+			@include mt(31px);
+		}
+	}
+}
+
+.b-article-list_adapt_default {
+	@include adaptive-mobile {
+		@include state_mobile;
+	}
+}

@@ -1,0 +1,7 @@
+mixin b-small-banners()
+	+b.b-small-banners
+		+e.items
+			each val in [1,2]
+				+e.item
+					+e.A.link(href="#")
+						+e.IMG.img(src='/assets/images/content/small_banner' +val+'.jpg')

@@ -1,0 +1,6 @@
+/* Данный файл генерируется автоматически, ручные изменения будут перезатерты */
+<% _.forEach( icons, function( icon ){ %>.<%= icon.class %> {
+    width: <%= icon.width %>;
+    height: <%= icon.height %>;
+}
+<% }); %>

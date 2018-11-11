@@ -1,0 +1,47 @@
+include /blocks/project/b-article-item/b-article-item
+
+mixin b-article-plates_interier()
+	+b.b-article-plates(class=attributes.class)
+		+e.header
+			+e.title Интерьер. С чего начать?
+			+e.header-ui
+				+e.A.all-link.u-btn._gray._small(href="#") Все статьи
+
+		+e.main
+			+e.articles
+				+e.article-item._big
+					+b-article-item({
+						link: '#',
+						fullImage: '/assets/images/content/interior-1.jpg',
+						img: '/assets/images/content/interior-2.jpg',
+						header: { category: 'Интерьер', date: '11 октября' },
+						title: '5 отделочных материалов, которые вам по карману',
+						titleMods: ['_big'],
+						previewText: 'Дизайнеры делятся своими историями по обустройству...',
+					})._big._adapt_big
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/interior-2.jpg',
+						header: {category: 'Интерьер', date: '11 октября'},
+						title: 'Как преобразить квартиру с помощью текстиля: 7 идей',
+					})._adapt_default
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/interior-3.jpg',
+						header: {category: 'Интерьер', date: '11 октября'},
+						title: 'Розовый цвет в интерьере: советы дизайнеров + товары',
+					})._adapt_default
+				+e.article-item
+					+b-article-item({
+						link: '#',
+						img: '/assets/images/content/interior-4.jpg',
+						header: {category: 'Интерьер', date: '11 октября'},
+						title: 'Как придать кухне скандинавский шарм: идея от профессионала',
+					})._adapt_default
+
+		+e.footer
+			+e.btns
+				+e.btn
+					+e.A.all-link.u-btn._gray._small(href="#") Все статьи

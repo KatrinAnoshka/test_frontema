@@ -1,0 +1,19 @@
+mixin b-slide_default()
+	+b.b-slide(class=attributes.class)
+		+e.holder
+			+e.bg-holder
+				+e.bg(style="background-image: url('/assets/images/content/slide-bg1.jpg')")
+			+e.content-holder
+				+e.labels
+					+e.adv-label.u-adv-label Реклама
+				+e.content
+					+e.header
+						+e.pre-title «Capital Group»
+						+e.title Жилой дом «Кутузовский XII»
+					+e.main
+						+e.intro-text от 7 млн. рублей
+						+e.text Москва, м. Площадь Ильича, Римская, Проспект Вернадского
+					+e.footer
+						+e.btns
+							+e.btn-item
+								+e.A.accept-btn.u-btn._black._small(href="#") Подробнее

@@ -1,0 +1,11 @@
+include /blocks/project/b-adv-plate/b-adv-plate
+
+mixin b-adv-list(data)
+	+b.b-adv-list(class=attributes.class).js-init
+		if data.title
+			+e.title!= data.title
+		+e.items
+			each item in data.items
+				+e.item
+					+b-adv-plate(item.data)(class=item.mod)
+

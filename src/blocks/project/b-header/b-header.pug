@@ -1,0 +1,19 @@
+include /blocks/project/b-small-adv/b-small-adv
+include /blocks/project/b-top-menu/b-top-menu
+
+mixin b-header()
+	+b.b-header._adapt_default
+		+e.top-section
+			+e.left-side
+				a(href="#")
+					+e.IMG.logo(src="/assets/images/content/vsenovostroiki_logo.svg")
+			+e.right-side
+				+e.top-adv
+					+b-small-adv({ text: 'Жилой район Скандинавия' })
+				+e.burger-holder
+					+icon('burger').burger.js-menu-toggler
+
+		+e.middle-section
+			+e.menu
+				+b-top-menu._adapt_default
+

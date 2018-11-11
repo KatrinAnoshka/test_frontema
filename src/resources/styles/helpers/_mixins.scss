@@ -1,0 +1,103 @@
+@mixin clearfix() {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin adaptive-desktop{
+	@media (min-width: $bp-desktop-min){
+		@content;
+	}
+}
+
+@mixin adaptive-desktop-sm{
+	@media (min-width: $bp-desktop-sm-min) and (max-width: $bp-desktop-sm-max) {
+		@content;
+	}
+}
+
+@mixin adaptive-tablet{
+	@media (min-width: $bp-tablet-min) and (max-width: $bp-tablet-max) {
+		@content;
+	}
+}
+
+@mixin adaptive-mobile{
+	@media (max-width: $bp-mobile-max) {
+		@content;
+	}
+}
+
+@mixin placeholder() {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder{
+		@content;
+	}
+	&:-ms-input-placeholder{
+		@content;
+	}
+	&.ui-placeholder {
+		@content;
+	}
+}
+
+@mixin mr($val) {
+	margin-right: $val;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+
+@mixin mt($val) {
+	margin-top: $val;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+@mixin mb($val) {
+	margin-bottom: $val;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@mixin ml($val) {
+	margin-left: $val;
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+@mixin hover() {
+	&:hover {
+		@content;
+	}
+}
+
+@mixin ft-icon($var) {
+	content: $var;
+	font-family: "Fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1em;
+	margin-left: .2em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

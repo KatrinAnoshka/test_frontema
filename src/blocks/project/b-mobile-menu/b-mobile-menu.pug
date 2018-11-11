@@ -1,0 +1,37 @@
+include /blocks/project/b-small-adv/b-small-adv
+
+mixin b-mobile-menu
+	+b.b-mobile-menu(class=attributes.class)
+		+e.holder
+			+e.UL.level
+				+e.item
+					+e.link-wrap
+						+e.A.link(href="#") Новостройки
+					+e.second-holder
+						+e.UL.second-level
+							+e.second-item
+								+e.second-link-wrap
+									+e.A.second-link(href="#") Москва #[+e.SPAN.counter 650]
+							+e.second-item
+								+e.second-link-wrap
+									+e.A.second-link(href="#") Московская область #[+e.SPAN.counter 1043]
+							+e.second-item
+								+e.second-link-wrap
+									+e.A.second-link(href="#") Новая москва #[+e.SPAN.counter 121]
+							+e.second-item
+								+e.second-link-wrap
+									+e.A.second-link(href="#") Санкт-Петербург #[+e.SPAN.counter 725]
+					+e.mobile-adv
+						+b-small-adv({ text: 'Жилой район Скандинавия' })
+
+				+e.item
+					+e.link-wrap
+						+e.A.link(href="#") Аппартаменты
+
+				+e.item
+					+e.link-wrap
+						+e.A.link(href="#") Таунхаусы
+
+				+e.item
+					+e.link-wrap
+						+e.A.link(href="#") Застройщики

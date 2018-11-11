@@ -1,0 +1,24 @@
+mixin b-top-menu()
+	+b.b-top-menu(class=attributes.class)
+		+e.top-holder
+			+e.left-menu
+				+e.UL.menu-items
+					+e.LI.menu-item
+						+e.SPAN.menu-link._disabled Новостройки
+					+e.LI.menu-item
+						+e.A.menu-link(href='#') #[+e.link-text Москва] #[+e.counter 650]
+					+e.LI.menu-item._active
+						+e.SPAN.menu-link #[+e.link-text Московская область] #[+e.counter 1043]
+					+e.LI.menu-item
+						+e.A.menu-link(href='#') #[+e.link-text Новая Москва] #[+e.counter 121]
+					+e.LI.menu-item
+						+e.A.menu-link(href='#') #[+e.link-text Санкт-Петербург] #[+e.counter 725]
+
+			+e.right-menu
+				+e.UL.menu-items
+					+e.LI.menu-item
+						+e.A.menu-link(href='#') #[+e.link-text Апартаменты]
+					+e.LI.menu-item
+						+e.A.menu-link(href='#') #[+e.link-text Таунхаусы]
+					+e.LI.menu-item
+						+e.A.menu-link(href='#') #[+e.link-text Застройщики]

@@ -1,0 +1,42 @@
+include /../node_modules/bemto.pug/bemto
+include /blocks/library/icon/icon
+include /blocks/library/scripts/scripts
+include /blocks/project/b-header/b-header
+include /blocks/project/b-footer/b-footer
+include /blocks/project/b-mobile-menu/b-mobile-menu
+include /blocks/project/b-promo-bg/b-promo-bg
+
+- $bodyMods = [];
+
+block global_vars
+
+doctype html
+html(lang='ru')
+	include /blocks/library/head/head
+	block body
+		+b('body').b-page(class=$bodyMods)
+			+e.main-wrap
+				+e.bg-wrap._with-adv
+
+					+e.bg
+						+b-promo-bg._adapt_default
+
+					+e.container.u-container
+						+e.fixed-holder
+							+icon('close').fix-closer.js-menu-toggler
+							+e.fixed-menu
+								+b-mobile-menu()._adapt_default
+
+						block header
+							+e.HEADER.header
+								+b-header
+
+						block main
+							+e.MAIN.main
+								block content
+
+			block footer
+				+e.FOOTER.footer
+					+b-footer._adapt_deafault
+
+			+scripts(['main.min.js'])

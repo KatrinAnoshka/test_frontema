@@ -1,0 +1,17 @@
+mixin b-promo-bg()
+	+b.b-promo-bg(class=attributes.class)
+		+e.bgs
+			+e.page-bg._desktop(style="background-image: url('/assets/images/content/brand-banner1.jpg')")
+			+e.page-bg._desktop-sm(style="background-image: url('/assets/images/content/brand-banner1.jpg')")
+			+e.page-bg._tablet(style="background-image: url('/assets/images/content/brand-banner2.jpg')")
+			+e.page-bg._mobile(style="background-image: url('/assets/images/content/brand-banner3.jpg')")
+
+		+e.container.u-container
+			+e.left-promo-bg
+				+e.IMG.img(src="/assets/images/content/left-promo.png")
+
+			+e.right-promo-bg
+				+e.IMG.img(src="/assets/images/content/right-promo.png")
+
+		+e.A.bg-link(href="#")
+

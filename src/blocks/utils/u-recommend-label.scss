@@ -1,0 +1,19 @@
+.u-recommend-label {
+	display: inline-flex;
+	background-color: #F75330;
+	padding: 6px 11px;
+	padding-right: 13px;
+	border-bottom-right-radius: 30px;
+	border-top-right-radius: 30px;
+	align-items: center;
+	&__icon {
+		margin-right: 7px;
+		fill: #fff;
+	}
+	&__text {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 1.2;
+		color: white;
+	}
+}

@@ -1,0 +1,6 @@
+mixin b-tabs-head(data)
+	+b.b-tabs-head(class=attributes.class)
+		+e.list
+			each item in data.items
+				+e.item
+					+e.A.link(href=item.link class=item.mods)!= item.text

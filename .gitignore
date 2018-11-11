@@ -1,0 +1,10 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+/node_modules
+/.gulp
+/.idea
+/src/libs/*
+!/src/libs/vendor
+/dist
+package-lock.json
+yarn.lock

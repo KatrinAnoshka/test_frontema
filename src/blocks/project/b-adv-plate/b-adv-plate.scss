@@ -1,0 +1,153 @@
+.b-adv-plate {
+	$block: &;
+	&__plate {
+		position: relative;
+		padding: 12px;
+		background-color: #FDFDFD;
+		border-radius: 4px;
+		border: 1px solid #E5E5E5;
+		min-height: 282px;
+		padding-bottom: 30px;
+		transition-duration: $tr-time;
+		transition-property: box-shadow, border-color;
+		@include hover() {
+			background-color: #FEFEFE;
+			box-shadow: 0 2px 16px rgba(58, 52, 48, 0.12);
+			border-color: transparent;
+			#{$block}__title {
+				color: #9C3C3B;
+			}
+
+			#{$block}__hover-content {
+				display: block;
+			}
+		}
+	}
+	&__img {
+		max-width: 100%;
+		height: auto;
+		vertical-align: top;
+	}
+	&__img-holder {
+		@include mb(16px);
+	}
+	&__title {
+		@include mb(12px);
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 1.25;
+		color: #3A3430;
+	}
+	&__text {
+		font-size: 12px;
+		line-height: 1.2;
+		color: #B4AFAE;
+	}
+	&__labels {
+		position: absolute;
+		bottom: 12px;
+		left: 12px;
+	}
+	&__link {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+	&__hover-content {
+		display: none;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: #fff;
+		border-radius: 4px;
+		padding: 12px 12px 18px;
+	}
+	&__hover-title {
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: underline;
+		color: #9C3C3B;
+		@include mb(8px);
+	}
+	&__hover-text {
+		font-size: 12px;
+		line-height: 1.25;
+		color: #B4AFAE;
+	}
+	&__hover-link {
+		color: inherit;
+	}
+}
+
+@mixin state_small() {
+	.b-adv-plate {
+		&__plate {
+			padding: 11px;
+			min-height: 98px;
+			@include clearfix();
+		}
+		&__title {
+			@include mb(7px);
+		}
+
+		&__img-holder {
+			float: left;
+			max-width: 120px;
+			@include mr(16px);
+			margin-bottom: 0;
+
+			+ .b-adv-plate__content {
+				margin-left: 136px;
+			}
+		}
+
+		&__labels {
+			position: static;
+			@include mt(7px);
+		}
+
+		&__text {
+			@include mt(10px);
+			@include mb(13px);
+			line-height: 1.2;
+		}
+	}
+}
+
+@mixin state_adapt_aside-sm() {
+	.b-adv-plate {
+		&__img-holder {
+			float: none;
+			max-width: 100%;
+			margin-right: 0;
+			@include mb(16px);
+
+			+ .b-adv-plate__content {
+				margin-left: 0;
+			}
+		}
+		&__img {
+			width: 100%;
+		}
+	}
+}
+
+.b-adv-plate_small {
+	@include state_small;
+}
+
+.b-adv-plate_adapt_aside {
+	@include adaptive-desktop-sm {
+		@include state_adapt_aside-sm;
+	}
+	@include adaptive-tablet {
+		@include state_adapt_aside-sm;
+	}
+	@include adaptive-mobile {
+		@include state_adapt_aside-sm;
+	}
+}

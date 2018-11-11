@@ -1,0 +1,58 @@
+mixin b-footer()
+	+b.b-footer(class=attributes.class)
+		+e.top-section
+			.u-container
+				+e.logo-holder
+					+e.IMG.logo(src="/assets/images/content/vsenovostroiki_logo.svg")
+				+e.up-link-holder
+					+e.up-link.js-scroll-to-top
+						+b.u-arrow._round-white._up
+							+icon('angle').icon
+		+e.middle-section
+			.u-container
+				+e.middle-cols
+					+e.left-col
+						+e.links
+							+e.link-item
+								+e.A.link(href="#") Размещение рекламы
+							+e.link-item
+								+e.A.link(href="#") О проекте
+					+e.main-col
+						+e.link-cols
+							+e.link-col
+								+e.links
+									+e.link-item
+										+e.A.link(href="#") Все подборки новостроек
+									+e.link-item
+										+e.A.link(href="#") Все новостройки
+									+e.link-item
+										+e.A.link(href="#") Застройщики
+							+e.link-col
+								+e.links
+									+e.link-item
+										+e.A.link(href="#") Новости от застройщиков
+									+e.link-item
+										+e.A.link(href="#") Новости рынка
+									+e.link-item
+										+e.A.link(href="#") Мероприятия рынка
+							+e.link-col
+								+e.links
+									+e.link-item
+										+e.A.link(href="#") Статьи. Аналитика
+									+e.link-item
+										+e.A.link(href="#") Мнение эксперта
+									+e.link-item
+										+e.A.link(href="#") Интервью
+							+e.link-col
+								+e.links
+									+e.link-item
+										+e.A.link(href="#") Контрольная покупка
+									+e.link-item
+										+e.A.link(href="#") Интерьер. С чего начать?
+									+e.link-item
+										+e.A.link(href="#") Правовая информация
+
+		+e.bottom-section
+			.u-container
+				+e.left-bottom © Все Новостройки, 2011—2018
+				+e.right-bottom При любом использовании материалов сайта ссылка на vsenovostroyki.ru обязательна

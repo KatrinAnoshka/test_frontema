@@ -1,0 +1,17 @@
+mixin b-plates-slider(data)
+	+b.b-plates-slider(class=attributes.class).js-init
+		+e.header
+			if data.title
+				+e.title!= data.title
+			+e.header-ui
+				+e.arrows
+					+e.prev
+						+b.u-arrow._round-gray
+							+icon('angle').icon
+					+e.next
+						+b.u-arrow._round-gray._flip
+							+icon('angle').icon
+
+		+e.main
+			+e.slides
+				block
