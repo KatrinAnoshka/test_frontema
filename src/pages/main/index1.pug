@@ -406,25 +406,37 @@ block main-col
 
 
 
-	+e.main-item.__interview
+	+e.main-item._interview
 		+b-article-shelf({
 			title: 'HHHHHHHHHH',
 			items: [
-				{ data: {
-					link: '#',
-					header: {category: 'Мероприятия рынка', date: '11 октября'},
-					title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки'
-				}},
-				{ data: {
-					link: '#',
-					header: {category: 'Мероприятия рынка', date: '11 октября'},
-					title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
-				}},
-				{ data: {
-					link: '#',
-					header: {category: 'Мероприятия рынка', date: '11 октября'},
-					title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
-				}},
+				{
+					mod: ['_opinion', '_adapt_opinion'],
+					data: {
+						link: '#',
+						img: '/assets/images/content/ava1.png',
+						header: {category: 'Мнение экспертов', date: '11 октября'},
+						title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки',
+					}
+				},
+				{
+					mod: ['_opinion', '_adapt_opinion'],
+					data: {
+						link: '#',
+						img: '/assets/images/content/ava2.png',
+						header: {category: 'Мнение экспертов', date: '11 октября'},
+						title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+					}
+				},
+				{
+					mod: ['_opinion', '_adapt_opinion'],
+					data: {
+						link: '#',
+						img: '/assets/images/content/ava3.png',
+						header: {category: 'Мнение экспертов', date: '11 октября'},
+						title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+					}
+				},
 			],
 			allLink: '#',
 			allText: 'Все новости',

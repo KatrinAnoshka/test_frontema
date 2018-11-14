@@ -3,19 +3,18 @@ include /blocks/project/b-article-item/b-article-item
 mixin b-article-shelf(data)
 	+b.b-article-shelf(class=attributes.class)
 		+e.wrap
-		+e.title Github
-		+e.plate
-			+e.header
-				if data.title
-					+e.title!= data.title
+			+e.plate
+				+e.header
+					if data.title
+						+e.title!= data.title
 
-			+e.main
-				+e.items
-					each item in data.items
-						+e.item
-							+b-article-item(item.data)._small(class=item.mod)
+				+e.main
+					+e.items
+						each item in data.items
+							+e.item
+								+b-article-item(item.data)._small(class=item.mod)
 
-			+e.footer
-				+e.ui
-					+e.ui-item
-						+e.A.all-link.u-btn._transparent._small(href=data.allLink)!= data.allText
+				+e.footer
+					+e.ui
+						+e.ui-item
+							+e.A.all-link.u-btn._transparent._small(href=data.allLink)!= data.allText
