@@ -1,0 +1,31 @@
+.b-vertical-widget {
+	&__plate {
+		padding-top: 29px;
+		padding-bottom: 16px;
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 24px 19px 28px;
+	}
+	&__head-icon {
+		fill:  #9C3C3B;
+	}
+	&__title {
+		font-family: $Montserrat;
+		font-weight: bold;
+		font-size: 14px;
+		letter-spacing: -0.01em;
+		color: #9C3C3B;
+		opacity: 0.9;
+	}
+	&__top {
+		&__btns {
+			padding-bottom: 20px;
+			border-bottom: 1px solid #E3E3E3;
+		}
+	&__item {
+		padding: 12px 19px;
+		border-bottom: 1px solid #E3E3E3;
+	}	
+}

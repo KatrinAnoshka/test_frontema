@@ -408,10 +408,10 @@ block main-col
 
 	+e.main-item._interview
 		+b-article-shelf({
-			title: 'HHHHHHHHHH',
+			title: 'Интервью специалистов',
 			items: [
 				{
-					mod: ['_opinion', '_adapt_opinion'],
+					mod: ['_interview', '_adapt_interview'],
 					data: {
 						link: '#',
 						img: '/assets/images/content/ava1.png',
@@ -420,7 +420,7 @@ block main-col
 					}
 				},
 				{
-					mod: ['_opinion', '_adapt_opinion'],
+					mod: ['_interview', '_adapt_interview'],
 					data: {
 						link: '#',
 						img: '/assets/images/content/ava2.png',
@@ -429,7 +429,7 @@ block main-col
 					}
 				},
 				{
-					mod: ['_opinion', '_adapt_opinion'],
+					mod: ['_interview', '_adapt_interview'],
 					data: {
 						link: '#',
 						img: '/assets/images/content/ava3.png',
@@ -439,7 +439,36 @@ block main-col
 				},
 			],
 			allLink: '#',
-			allText: 'Все новости',
+			allText: 'Все интервью',
+			items: [
+				{
+					mod: ['_interview', '_adapt_interview'],
+					data: {
+						link: '#',
+						img: '/assets/images/content/ava1.png',
+						header: {category: 'Мнение экспертов', date: '11 октября'},
+						title: 'ВТБ снизил ипотечные ставки для покупателей района Новые Ватутинки',
+					}
+				},
+				{
+					mod: ['_interview', '_adapt_interview'],
+					data: {
+						link: '#',
+						img: '/assets/images/content/ava2.png',
+						header: {category: 'Мнение экспертов', date: '11 октября'},
+						title: 'ЖК «Томилино» – живописная природа и всего 20 км до центра'
+					}
+				},
+				{
+					mod: ['_interview', '_adapt_interview'],
+					data: {
+						link: '#',
+						img: '/assets/images/content/ava3.png',
+						header: {category: 'Мнение экспертов', date: '11 октября'},
+						title: 'Кладовые со скидкой 20% в ЖК «Гринада»'
+					}
+				},
+			],
 		})._adapt_default
 
 

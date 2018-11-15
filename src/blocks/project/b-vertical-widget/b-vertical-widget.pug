@@ -1,0 +1,33 @@
+mixin b-vertical-widget(data)
+	+b.b-vertical-widget
+		+e.plate
+			+e.header
+				+e.title!= data.title
+				+icon('crown').head-icon
+			+e.top
+				+e.btns
+					+e.btn
+						+e.all-link.u-btn._transparent._small(href="#") $ft-close				
+			+e.main
+				+e.items
+					+e.item
+						+e.A.item-link(href="#")
+							+e.item-title 
+							+e.item-text 						
+					+e.item
+						+e.A.item-link(href="#")
+							+e.item-title 
+							+e.item-text 
+					+e.item
+						+e.A.item-link(href="#")
+							+e.item-title 
+							+e.item-text 
+					+e.item
+						+e.A.item-link(href="#")
+							+e.item-title 
+							+e.item-text 
+			+e.footer
+				+e.btns
+					+e.btn
+						+e.all-link.u-btn._transparent._small(href="#") $ft-close
+									

@@ -2,19 +2,28 @@ include /blocks/project/b-article-item/b-article-item
 
 mixin b-article-shelf(data)
 	+b.b-article-shelf(class=attributes.class)
-		+e.wrap
-			+e.plate
-				+e.header
-					if data.title
-						+e.title!= data.title
+		+e.container
+			+e.header
+				if data.title
+					+e.title!= data.title
+			+e.wrap
+				+e.left-col
+					+e.plate
+						+e.main
+							+e.items
+								each item in data.items
+									+e.item
+										+b-article-item(item.data)._small(class=item.mod)
 
-				+e.main
-					+e.items
-						each item in data.items
-							+e.item
-								+b-article-item(item.data)._small(class=item.mod)
+						+e.footer
+							+e.ui
+								+e.ui-item
+									+e.A.all-link.u-btn._transparent._small(href=data.allLink)!= data.allText
 
-				+e.footer
-					+e.ui
-						+e.ui-item
-							+e.A.all-link.u-btn._transparent._small(href=data.allLink)!= data.allText
+				+e.right-col
+					+e.plate
+						+e.main
+							+e.items
+								each item in data.items
+									+e.item
+										+b-article-item(item.data)._small(class=item.mod)
