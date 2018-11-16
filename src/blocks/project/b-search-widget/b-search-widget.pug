@@ -1,9 +1,22 @@
-mixin b-vertical-widget(data)
-	+b.b-vertical-widget
+include /blocks/project/b-input-select/b-input-select
+include /blocks/project/b-input-text/b-input-text
+include /blocks/project/b-tabs-head/b-tabs-head
+
+mixin b-search-widget(data)
+	+b.b-search-widget(class=attributes.class)
 		+e.plate
+			+e.tabs-header
+				+e.list
+					each item in data.items
+						+e.item
+							+b-tabs-head(item.data)._small(class=item.mod)
+
 			+e.header
-				+e.title!= data.title
-				+icon('crown').head-icon
+				if data.title
+					+e.title!= data.title
+
+
+
 			+e.top
 				+e.btns
 					+e.btn

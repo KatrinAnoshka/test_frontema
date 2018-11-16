@@ -9,14 +9,13 @@ include /blocks/project/b-article-plates/b-article-plates_offers
 include /blocks/project/b-plates-slider/b-plates-slider
 include /blocks/project/b-adv-plate/b-adv-plate
 include /blocks/project/b-article-list/b-article-list
-include /blocks/project/b-article-shelf/b-article-shelf
 include /blocks/project/b-viewed-widget/b-viewed-widget
 include /blocks/project/b-adv-list/b-adv-list
 include /blocks/project/b-small-banners/b-small-banners
 
-//- include /blocks/project/b-vertical-widget/b-vertical-widget
-//- include /blocks/project/b-search-widget/b-search-widget
-//- include /blocks/project/b-article-shelf/b-article-shelf
+include /blocks/project/b-vertical-widget/b-vertical-widget
+include /blocks/project/b-search-widget/b-search-widget
+include /blocks/project/b-article-shelf/b-article-shelf
 
 block global_vars
 	- $bodyMods = ['_main'];
@@ -80,9 +79,18 @@ block mobile-header
 
 block left-col
 	//- Здесь размесить реализацию поискового виджета
-	//+e.aside-item._search-widget
-		//.js-replacer(data-id="search-widget" data-points='{"breakpoints":["tablet","desktop","desktop_sm"]}' data-active)
-			// +b-search-widget._adapt_aside
+	+e.aside-item._search-widget
+		.js-replacer(data-id="search-widget" data-points='{"breakpoints":["tablet","desktop","desktop_sm"]}' data-active)
+			+b-search-widget._adapt_aside 
+				+b-tabs-head({
+					items: [
+						{text: 'Москва'},
+						{text: 'Московская область'},
+						{text: 'Новая Москва'},
+						{text: 'Санкт-Петербург'},
+					]
+				})
+
 
 	+e.aside-item._aside-menu
 		.js-replacer(data-id="aside-menu" data-points='{"breakpoints":["tablet","desktop","desktop_sm"]}' data-active)
@@ -94,8 +102,10 @@ block left-col
 		})
 
 	//- Здесь размесить реализацию виджета c вертикальным слайдером
-	//+e.aside-item
-		//+b-vertical-widget()
+	+e.aside-item
+		+b-vertical-widget({
+			title: 'Лидеры рынка'
+		})
 
 	+e.aside-item._banner
 		+e.A.banner-link(href="")
